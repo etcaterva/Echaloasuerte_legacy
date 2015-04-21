@@ -85,8 +85,8 @@ function swapoff2()
       <p>La web se puede dividir en 2 tipos de &quot;tiradas&quot; (echar a suerte algo).<br />
       -Individual. <br />
       -Compartida.<br />
-      En el tipo individual se supone que todos los participantes estan delante del mismo ordenador, mientras que en el modo compartido los participantes pueden estar cada uno en una punta del mundo.<br />
-      En el modo individual solo sera necesario indicar los valores para 
+      En el tipo Individual se supone que todos los participantes estan delante del mismo ordenador, mientras que en el modo compartido los participantes pueden estar cada uno en una punta del mundo.<br />
+      En el modo Individual solo sera necesario indicar los valores para 
       obtener un resultado, mientras que en el modo compartido, habrá que crear una tirada, y una vez creada, el resto de participantes deberan unirse a ella. Una vez se haya unido el número de participantes acordado, se visualizaran los resultados.<br />
       Nota: al crear la tirada, puede indicar el email de los participantes para que reciban un mail con los datos.
       </p>
@@ -135,7 +135,7 @@ function swapoffMoneda()
         <p>
         ¿Cara o Cruz? Haz click
         </p>
-		<a href="http://www.echaloasuerte.com/individual/Eleccion.php?num=1&Values=Cara,Cruz"><img  name="imgMoneda" src="img/cruz.png" alt="Moneda" onmouseover="swaponMoneda()" onmouseout="swapoffMoneda()" title="¿Cara o Cruz?" /></a>
+		<a href="http://www.echaloasuerte.com/Individual/Eleccion.php?num=1&Values=Cara,Cruz"><img  name="imgMoneda" src="img/cruz.png" alt="Moneda" onmouseover="swaponMoneda()" onmouseout="swapoffMoneda()" title="¿Cara o Cruz?" /></a>
         </center>
         </div> 		  <h3 onclick="hide('rrss')">
           Redes Sociales</h3>

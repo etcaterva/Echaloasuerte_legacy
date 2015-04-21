@@ -73,9 +73,9 @@ function swapoff3()
     <p>Qué deseas, ¿<strong>un numero aleatorio, elegir un valor o relacionar varios</strong>?</p>
     <p>
       <center>
-            <p><a href="individual/Aleatorio.php"><img  name="imgAleatorio" src="img/buttonAleatorio.png" alt="Numero aleatorio" width="264" height="230" onmouseover="swapon1()" onmouseout="swapoff1()" title="Numero aleatorio" /></a> <a href="individual/Eleccion.php"><img name="imgEleccion" src="img/buttonEleccion.png" alt="Elegir entre valores" width="264" height="230" onmouseover="swapon2()" onmouseout="swapoff2()" title="Elegir entre valores"/></a>
+            <p><a href="Individual/Aleatorio.php"><img  name="imgAleatorio" src="img/buttonAleatorio.png" alt="Numero aleatorio" width="264" height="230" onmouseover="swapon1()" onmouseout="swapoff1()" title="Numero aleatorio" /></a> <a href="Individual/Eleccion.php"><img name="imgEleccion" src="img/buttonEleccion.png" alt="Elegir entre valores" width="264" height="230" onmouseover="swapon2()" onmouseout="swapoff2()" title="Elegir entre valores"/></a>
               <br />
-      <a href="individual/Asociacion.php"><img src="img/buttonAsociacion.png" alt="Asociar valores" name="imgAsociacion" width="264" height="230" id="imgAsociacion" title="Asociar valores" onmouseover="swapon3()" onmouseout="swapoff3()"/></a> </p>
+      <a href="Individual/Asociacion.php"><img src="img/buttonAsociacion.png" alt="Asociar valores" name="imgAsociacion" width="264" height="230" id="imgAsociacion" title="Asociar valores" onmouseover="swapon3()" onmouseout="swapoff3()"/></a> </p>
       </center>
     </p>
     <?php
@@ -129,7 +129,7 @@ function swapoffMoneda()
         <p>
         ¿Cara o Cruz? Haz click
         </p>
-		<a href="http://www.echaloasuerte.com/individual/Eleccion.php?num=1&Values=Cara,Cruz"><img  name="imgMoneda" src="img/cruz.png" alt="Moneda" onmouseover="swaponMoneda()" onmouseout="swapoffMoneda()" title="¿Cara o Cruz?" /></a>
+		<a href="http://www.echaloasuerte.com/Individual/Eleccion.php?num=1&Values=Cara,Cruz"><img  name="imgMoneda" src="img/cruz.png" alt="Moneda" onmouseover="swaponMoneda()" onmouseout="swapoffMoneda()" title="¿Cara o Cruz?" /></a>
         </center>
         </div> 		  <h3 onclick="hide('rrss')">
           Redes Sociales</h3>

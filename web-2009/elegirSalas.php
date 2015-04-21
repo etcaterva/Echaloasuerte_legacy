@@ -14,22 +14,22 @@
 <link href="css/styles.css" rel="stylesheet" type="text/css" media="screen" />
 <link href="css/demo_table.css" rel="stylesheet" type="text/css" media="screen" />
 
-<script> 
+<script>
 $(document).ready(function(){
-	
+
 	/**FAQS**/
 	$('.faqs dd').hide(); // Hide all DDs inside .faqs
 	$('.faqs dt').hover(function(){$(this).addClass('hover')},function(){$(this).removeClass('hover')}).click(function(){ // Add class "hover" on dt when hover
 		$(this).next().slideToggle('normal'); // Toggle dd when the respective dt is clicked
 	});
-	
+
 	/** Cara o cruz**/
 	$('#CaraOCruz').click(function(){
 		if(Math.random() < .5) alert('Cara');
 		else alert('Cruz');
 	});
-	
-	
+
+
 	$('#salasTable tbody tr').click(function()
 	{
 		if($('#dataToJoin').valid())
@@ -55,7 +55,7 @@ $(document).ready(function(){
 			{
 				tiradas = data;
 				$table = $('#salasTable tbody tr');
-				$table.empty();		
+				$table.empty();
 				var	htmlToAdd;
 				$.each(data,function(key,value)
 				{
@@ -68,9 +68,9 @@ $(document).ready(function(){
 		});
 	}//end refresh
 	refresh();
-	
+
 	$('#dataToJoin').validate();
-	
+
 	//refreshcar cada 10 segundos:
 	//var t = setInterval(function(){refresh();},10000);
 });
@@ -84,7 +84,7 @@ $(document).ready(function(){
 		<ul>
 			<li id="button1"><a href="index.php"  title="">Inicio</a></li>
 			<li id="button1"><a href="elegirSalas.php"  title="">Salas</a></li>
-			<li id="button4"><a href="contacto.php" title="">Contacto</a></li>
+			<li id="button4"><a href="Contacto.php" title="">Contacto</a></li>
 			<li id="button5"><a href="acerca.php" title="">Acerca de</a></li>
 		</ul>
 	</div>
@@ -99,7 +99,7 @@ $(document).ready(function(){
 	<div id="right">
 <h4 id="titulo">Salas</h4>
     <div id='panel'>
-		<div id="participantes">	
+		<div id="participantes">
 			<form action="" method="post" id="dataToJoin">
 				<img src="img/user.png"/>Nombre de Usuario: <input type="text" size="15" id="nameUsuario" name="nameUsuario" class="required"/>
 				<img src="img/llave.png"/>Contraseña: <input type="text" size="15" id="contrasenia" name="contrasenia" class=""/>
@@ -117,12 +117,12 @@ $(document).ready(function(){
 					<th>¿Contraseña?</th>
 				  </tr>
 				</thead>
-				<tbody>	
+				<tbody>
 				</tbody>
 			</table>
 		</div>
 	</div>
-      
+
 	<dl class="faqs">
         <dt>¿Para que vale esta página?</dt>
         <dd>La principal idea de esta página es ayudarte a decidir elecciones de forma aleatoria. La página include diferente tipos de modalidades según qué quieres echar a suerte.</dd>
@@ -142,29 +142,29 @@ $(document).ready(function(){
 			function swapoffMoneda()
 			 {
 				  document.imgMoneda.src="img/cruz.png";
-			 }  
+			 }
 			 </script>
         <p>
         ¿Cara o Cruz? Haz click
         </p>
 		<a href="#" id="CaraOCruz"><img  name="imgMoneda" src="img/cruz.png" alt="Moneda" onmouseover="swaponMoneda()" onmouseout="swapoffMoneda()" title="¿Cara o Cruz?" /></a>
         </center>
-        </div>     
-        
+        </div>
+
 		  <h3 onclick="$('#rrss').toggle('slow')">
           Redes Sociales</h3>
 		<div id="rrss" class="comnews">
-        <center>        <a href="http://www.tuenti.com/#m=Page&func=index&page_key=1_1769_59547535" target="_blank"><img  name="imgTuenti" src="img/tuenti.png" alt="Tuenti" title="Sigenos en Tuenti" /></a>        
-        
+        <center>        <a href="http://www.tuenti.com/#m=Page&func=index&page_key=1_1769_59547535" target="_blank"><img  name="imgTuenti" src="img/tuenti.png" alt="Tuenti" title="Sigenos en Tuenti" /></a>
+
 		<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FEchaloASuerte%2F202874843092116&amp;width=200&amp;colorscheme=light&amp;show_faces=false&amp;border_color=3A6BAD&amp;stream=false&amp;header=true&amp;height=62" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:62px;" allowTransparency="true"></iframe>  <br />
-        
-<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.echaloasuerte.com" data-text="Usando #EchaloASuerte :D" data-count="horizontal" data-lang="es">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>         
-       
+
+<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.echaloasuerte.com" data-text="Usando #EchaloASuerte :D" data-count="horizontal" data-lang="es">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
 
 <script type="text/javascript" src="http://platform.linkedin.com/in.js"></script><script type="in/share" data-url="http://www.echaloasuerte.com" data-counter="right"></script><br /><br />
 
 
-<a href="http://www.delicious.com/save" onclick="window.open('http://www.delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;"> 
+<a href="http://www.delicious.com/save" onclick="window.open('http://www.delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;">
 <img src="http://www.videojuegosonline.net/images/share/Share-delicius.png" height="50" width="50" alt="Delicious" />
 </a><font color="#FFFFFF" >____</font>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script><!-- Añade esta etiqueta donde quieras colocar el botón +1 -->
@@ -180,7 +180,7 @@ google_ad_height = 250;
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>  </center>
-      
+
        </div>
 
 	</div><div style="clear:both;">

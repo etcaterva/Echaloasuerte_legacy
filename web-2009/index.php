@@ -65,7 +65,7 @@ function swapoff2()
     <p>Bienvenido a EchaloASuerte, antes de poder elegir qué deseas echar a suerte, <strong>¿estáis todos  en el mismo ordenador o repartidos en varios?</strong></p>
     <p>
       <center>
-<a href="individual.php"><img  name="imgIndividual" src="img/buttonIndividual.png" alt="Tirada Individual" width="264" height="230" onmouseover="swapon1()" onmouseout="swapoff1()" title="Un ordenador" /></a>   <a href="Compartida.php"><img name="imgCompartida" src="img/buttonCompartida.png" alt="Tirada Compartida" width="264" height="230" onmouseover="swapon2()" onmouseout="swapoff2()" title="Varios ordenadores"/></a>
+<a href="Individual.php"><img  name="imgIndividual" src="img/buttonIndividual.png" alt="Tirada Individual" width="264" height="230" onmouseover="swapon1()" onmouseout="swapoff1()" title="Un ordenador" /></a>   <a href="Compartida.php"><img name="imgCompartida" src="img/buttonCompartida.png" alt="Tirada Compartida" width="264" height="230" onmouseover="swapon2()" onmouseout="swapoff2()" title="Varios ordenadores"/></a>
       </center>
     </p>
     <?php
@@ -111,7 +111,7 @@ function swapoffMoneda()
         <p>
         ¿Cara o Cruz? Haz click
         </p>
-		<a href="http://www.echaloasuerte.com/individual/Eleccion.php?num=1&Values=Cara,Cruz"><img  name="imgMoneda" src="img/cruz.png" alt="Moneda" onmouseover="swaponMoneda()" onmouseout="swapoffMoneda()" title="¿Cara o Cruz?" /></a>
+		<a href="http://www.echaloasuerte.com/Individual/Eleccion.php?num=1&Values=Cara,Cruz"><img  name="imgMoneda" src="img/cruz.png" alt="Moneda" onmouseover="swaponMoneda()" onmouseout="swapoffMoneda()" title="¿Cara o Cruz?" /></a>
         </center>
         </div>     
         
