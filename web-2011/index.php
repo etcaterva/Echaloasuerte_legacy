@@ -13,18 +13,18 @@
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/jquery.validate.js"></script>
 <link href="css/styles.css" rel="stylesheet" type="text/css" media="screen" />
-<script> 
+<script>
 $(document).ready(function(){
 	/** Variables de control **/
 	var tipoEncuesta = 0;//tipo encuesta seleccionada
 	var imagenTipoEncuesta = 0;//imagen selecciona(tipo)
-	
+
 	var tipoEncuestaUbicacion = 0;//tipo encuesta seleccionada [para multiple/individual]
 	var imagenTipoEncuestaUbicacion = 0;//imagen selecciona(tipo)	[para multiple/individual]
-	
+
 	$('.menuContent').attr('opacity','50%');
 	$('.menuContent').hide();
-	
+
 	/** Click en individual/multilpe **/
 	$('#imgIndividual').click(
 		function()
@@ -38,17 +38,17 @@ $(document).ready(function(){
 				}else
 				{
 					var str = imagenTipoEncuestaUbicacion.attr('src');
-					imagenTipoEncuestaUbicacion.attr('src',str.substring(0, str.length-6)+'.png');	
+					imagenTipoEncuestaUbicacion.attr('src',str.substring(0, str.length-6)+'.png');
 					if(tipoEncuestaUbicacion == 'compartida')
 						$('#compartida').hide(200,0);
 					$('#menuTipo .actual').removeClass('actual');
 				}
 				imagenTipoEncuestaUbicacion = $(this);
-				$(this).addClass('actual');				
+				$(this).addClass('actual');
 				tipoEncuestaUbicacion='individual';
 			}
 		});
-		
+
 	$('#imgCompartida').click(
 		function()
 		{
@@ -58,17 +58,17 @@ $(document).ready(function(){
 					scrollTop: $('#right').offset().top + 'px'
 				}, 'fast');
 
-				
+
 				var str = imagenTipoEncuestaUbicacion.attr('src');
 				imagenTipoEncuestaUbicacion.attr('src',str.substring(0, str.length-6)+'.png');
 				$('#compartida').show(200);
 				$('#menuTipo .actual').removeClass('actual');
-				imagenTipoEncuestaUbicacion = $(this);		
-				$(this).addClass('actual');	
+				imagenTipoEncuestaUbicacion = $(this);
+				$(this).addClass('actual');
 				tipoEncuestaUbicacion="compartida";
 			}
-		});		
-	
+		});
+
 	/** Click en los tipos de tirada **/
 	$('#imgAleatorio').click(
 		function()
@@ -83,7 +83,7 @@ $(document).ready(function(){
 				{
 					var aux = tipoEncuesta;
 					var str = imagenTipoEncuesta.attr('src');
-					imagenTipoEncuesta.attr('src',str.substring(0, str.length-6)+'.png');					
+					imagenTipoEncuesta.attr('src',str.substring(0, str.length-6)+'.png');
 					aux.fadeTo(200,0.1, function()
 					{
 						$('#aleatorio').fadeTo(200,1);
@@ -96,13 +96,13 @@ $(document).ready(function(){
 				$(this).addClass('actual');
 			}
 		});
-		
+
 	$('#imgEleccion').click(
 		function()
 		{
 			if(tipoEncuesta.attr('id') != 'eleccion')
 			{
-				var aux = tipoEncuesta;	
+				var aux = tipoEncuesta;
 				var str = imagenTipoEncuesta.attr('src');
 				imagenTipoEncuesta.attr('src',str.substring(0, str.length-6)+'.png');
 				aux.fadeTo(200,0.1, function()
@@ -111,18 +111,18 @@ $(document).ready(function(){
 					aux.hide();
 				});
 				$('#menuTirada .actual').removeClass('actual');
-				imagenTipoEncuesta = $(this);		
-				$(this).addClass('actual');	
-				tipoEncuesta=$('#eleccion');				
+				imagenTipoEncuesta = $(this);
+				$(this).addClass('actual');
+				tipoEncuesta=$('#eleccion');
 			}
-		});	
+		});
 
 	$('#imgAsociacion').click(
 		function()
 		{
 			if(tipoEncuesta.attr('id') != 'asociacion')
 			{
-				var aux = tipoEncuesta;	
+				var aux = tipoEncuesta;
 				var str = imagenTipoEncuesta.attr('src');
 				imagenTipoEncuesta.attr('src',str.substring(0, str.length-6)+'.png');
 				aux.fadeTo(200,0.1, function()
@@ -131,19 +131,19 @@ $(document).ready(function(){
 					aux.hide();
 				});
 				$('#menuTirada .actual').removeClass('actual');
-				imagenTipoEncuesta = $(this);		
-				$(this).addClass('actual');	
-				tipoEncuesta=$('#asociacion');				
+				imagenTipoEncuesta = $(this);
+				$(this).addClass('actual');
+				tipoEncuesta=$('#asociacion');
 			}
-		});			
-	
+		});
+
 	/** Raton sobre una imagen **/
 	$('#panel #menuTipo img, #panel #menuTirada img').each(function(){
 		var imgFile= $(this).attr('src');
 		var imgExt = /(\.\w{3,4}$)/;
 		var preloadImage = new Image();
 		preloadImage.src = imgFile.replace(imgExt,'_1$1');
-		
+
 		$(this).hover(
 			function()
 			{
@@ -155,12 +155,12 @@ $(document).ready(function(){
 				if(!$(this).hasClass('actual'))
 					$(this).attr('src',imgFile);
 			});
-	});	
-	
+	});
+
 	//esto tiene que ir despues de hover
 	$('#imgAleatorio').click();
 	$('#imgIndividual').click();
-	
+
 	/**click sobre añadir en formulario**/
 	$('#addBut').click(function()
 	{
@@ -170,34 +170,34 @@ $(document).ready(function(){
 	$('#elecAddBut1').click(function()
 	{
 		$(this).before('<input type="text" size="20" name="SeleccionValues1[]" class="SeleccionValues1 hidden"/>');
-		$('#panel .hidden').show('slow').removeClass('hidden');		
-	});	
+		$('#panel .hidden').show('slow').removeClass('hidden');
+	});
 	$('#elecAddBut2').click(function()
 	{
 		$(this).before('<input type="text" size="20" name="SeleccionValues2[]" class="SeleccionValues2 hidden"/>');
-		$('#panel .hidden').show('slow').removeClass('hidden');		
-	});		
+		$('#panel .hidden').show('slow').removeClass('hidden');
+	});
 	$('#correoAddBut2').click(function()
 	{
 		$(this).before('<input type="text" size="20" name="correo[]" class="correo hidden email"/>');
-		$('#panel .hidden').show('slow').removeClass('hidden');		
-	});			
-	
-	
+		$('#panel .hidden').show('slow').removeClass('hidden');
+	});
+
+
 	/**FAQS**/
 	$('.faqs dd').hide(); // Hide all DDs inside .faqs
 	$('.faqs dt').hover(function(){$(this).addClass('hover')},function(){$(this).removeClass('hover')}).click(function(){ // Add class "hover" on dt when hover
 		$(this).next().slideToggle('normal'); // Toggle dd when the respective dt is clicked
 	});
-	
+
 	/**Reaccion a los botones de los formularios**/
-	
-	
+
+
 	$('#aleatorioBut').click(function(){
 		if(!$('#formAleatorio').valid()) return false;
 		if(tipoEncuestaUbicacion=="compartida" && !$('#formCompartida').valid()) return false;
-		
-		var res = numAleatorio($('#AleatorioNum').val(),$('#AleatorioFrom').val(),$('#AleatorioTo').val(),$('#AleatorioRepe').attr('checked'));	
+
+		var res = numAleatorio($('#AleatorioNum').val(),$('#AleatorioFrom').val(),$('#AleatorioTo').val(),$('#AleatorioRepe').attr('checked'));
 		if(tipoEncuestaUbicacion!="compartida")
 		{
 			$('#aleatorio .resultados ul').hide('slow',function(){
@@ -206,7 +206,7 @@ $(document).ready(function(){
 					$('#aleatorio .resultados ul').append('<li>'+res[i]+'</li>');
 			});
 			$('#aleatorio .resultados').show('slow');
-			$('#aleatorio .resultados ul').show('slow');			
+			$('#aleatorio .resultados ul').show('slow');
 		}
 		else{//serializar y enviar los formularios
 			var dataCompartida = $('#formCompartida').serialize();
@@ -222,11 +222,11 @@ $(document).ready(function(){
 		}
 		return false;
 	});
-	
+
 	$('#eleccionBut').click(function(){
 		if(!$('#formEleccion').valid()) return false;
-		if(tipoEncuestaUbicacion=="compartida" && !$('#formCompartida').valid()) return false;		
-	
+		if(tipoEncuestaUbicacion=="compartida" && !$('#formCompartida').valid()) return false;
+
 		var repeticiones = 1;
 		var array = new Array();
 		$('.EleccionValues').each(function(){
@@ -234,20 +234,20 @@ $(document).ready(function(){
 			{
 				$(this).val($(this).val()+'('+repeticiones+')');
 				repeticiones = repeticiones+1;
-			}		
+			}
 			if($(this).val() != '')
 				array[array.length] = $(this).val();
 		});
 		var res = eleccion($('#EleccionNum').val(),array,$('#EleccionRepe').attr('checked'));
 		if(tipoEncuestaUbicacion!="compartida")
-		{		
+		{
 			$('#eleccion .resultados ul').hide('slow',function(){
 				$(this).html('');
 				for(var i=0;i<res.length;i++)
 					$('#eleccion .resultados ul').append('<li>'+res[i]+'</li>');
 			});
-			$('#eleccion .resultados').show('slow');		
-			$('#eleccion .resultados ul').show('slow');		
+			$('#eleccion .resultados').show('slow');
+			$('#eleccion .resultados ul').show('slow');
 		}
 		else{//serializar y enviar los formularios
 			var dataCompartida = $('#formCompartida').serialize();
@@ -261,12 +261,12 @@ $(document).ready(function(){
 			},"json");
 		}
 		return false;
-	});	
-	
+	});
+
 	$('#asociacionBut').click(function(){
-		if(!$('#formAsociacion').valid()) return false;	
-		if(tipoEncuestaUbicacion=="compartida" && !$('#formCompartida').valid()) return false;		
-	
+		if(!$('#formAsociacion').valid()) return false;
+		if(tipoEncuestaUbicacion=="compartida" && !$('#formCompartida').valid()) return false;
+
 		var arrayFrom = new Array();
 		var arrayTo = new Array();
 		var repeticiones = 1;
@@ -281,11 +281,11 @@ $(document).ready(function(){
 		});
 		$('.SeleccionValues2').each(function(){
 				arrayTo[arrayTo.length] = $(this).val();
-		});	
+		});
 		if($('#AsociacionRepe').attr('checked') != 'checked' && arrayFrom.length > arrayTo.length) $('#AsociacionRepe').attr('checked','checked');
 		var res = asociacion(arrayFrom,arrayTo,$('#AsociacionRepe').attr('checked'));
 		if(tipoEncuestaUbicacion!="compartida")
-		{				
+		{
 			$('#asociacion .resultados table').hide('slow',function(){
 				$(this).html('');
 				var vineta = "<td><img class='auto' src='img/vineta.png'></td>";
@@ -309,17 +309,17 @@ $(document).ready(function(){
 			{
 				window.location.replace("sala.php?idTirada="+returnedData.tirada+"&usuario="+returnedData.usuario+"&password="+encodeURI($('#contrasenia').val()));
 			},"json");
-		}			
+		}
 		return false;
-	});		
-	
-	
+	});
+
+
 	/** Cara o cruz**/
 	$('#CaraOCruz').click(function(){
 		if(Math.random() < .5) alert('Cara');
 		else alert('Cruz');
 	});
-	
+
 	/** Validations **/
 	jQuery.validator.addMethod("ToGreaterThanFrom", function(value, element, param) {
 		if($('#AleatorioRepe').attr('checked'))
@@ -327,7 +327,7 @@ $(document).ready(function(){
 		else
 			return parseInt(value) - parseInt($('#AleatorioFrom').val()) > parseInt($('#AleatorioNum').val());
 	}, "You should specify a wider range");
-	
+
 	$('#formAleatorio').validate({
 		rules:{
 			AleatorioTo: {ToGreaterThanFrom : true}
@@ -339,31 +339,31 @@ $(document).ready(function(){
 			return parseInt(value) <= $('.EleccionValues').length;
 		else return true;
 	}, "Not enaugh values.");
-	
+
 	$('#formEleccion').validate({
 		rules:{
 			EleccionNum: {NumOfFields : true}
 		}
 	});
-	
+
 	jQuery.validator.addMethod("AsociacionFields", function(value, element, param) {
 		if($('#AsociacionRepe').attr('checked') != 'checked')
 			return $('.SeleccionValues1').length <= $('.SeleccionValues2').length;
 		else return true;
-	}, "Not enaugh values on the first set.");	
-	
+	}, "Not enaugh values on the first set.");
+
 	$('#formAsociacion').validate({
 		rules:{
 			repe: {AsociacionFields : true}
 		}
-	});	
-	
-	$('#formCompartida').validate();		
-	
+	});
+
+	$('#formCompartida').validate();
+
 	//eventos submit(por si se pulsa intro en lugar del boton
 	$('#formAsociacion').submit(function(){$('#asociacionBut').click();return false;});
 	$('#formAleatorio').submit(function(){$('#aleatorioBut').click();return false;});
-	$('#formEleccion').submit(function(){$('#eleccionBut').click();return false;});	
+	$('#formEleccion').submit(function(){$('#eleccionBut').click();return false;});
 	$('#formCompartida').submit(function(){
 		if(tipoEncuesta.attr('id') == 'aleatorio') $('#aleatorioBut').click();
 		else if(tipoEncuesta.attr('id') == 'eleccion') $('#eleccionBut').click();
@@ -371,8 +371,17 @@ $(document).ready(function(){
 		return false;
 	});
 	$('#compartidaBut').click(function(){$('#formCompartida').submit();return false;});
-	
+
 	LinksExternos();
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62791775-1', 'auto');
+  ga('send', 'pageview');
+
 });
 
 </script>
@@ -403,28 +412,28 @@ $(document).ready(function(){
 <h4>Inicio</h4>
     <div id='panel'>
 		<div id='menuTipo'>
-			<img id="imgIndividual" src="img/buttonIndividual.png" alt="Tirada Individual"  />   
+			<img id="imgIndividual" src="img/buttonIndividual.png" alt="Tirada Individual"  />
 			<img id="imgCompartida" src="img/buttonCompartida.png" alt="Tirada Compartida"  />
 		</div>
-		
+
 		<div id='menuTirada'>
 			<img id="imgAleatorio" src="img/buttonAleatorio.png" alt="Numero aleatorio"/>
 			<img id="imgEleccion" src="img/buttonEleccion.png" alt="Elegir entre valores"/>
 			<img id="imgAsociacion" src="img/buttonAsociacion.png" alt="Asociar valores" />
 		</div>
-		
+
 		<div class="menuContent" id="aleatorio">
 			<form action="" method="post" id="formAleatorio">
-						  Dame 
+						  Dame
 							<input type="text" size="3" value="1" name="AleatorioNum" class="digits required" id="AleatorioNum" />
-						  numeros(s) desde 
-						  <input type="text" size="10" value="0" name="AleatorioFrom" class="digits required" id="AleatorioFrom"/> 
-						  hasta 
+						  numeros(s) desde
+						  <input type="text" size="10" value="0" name="AleatorioFrom" class="digits required" id="AleatorioFrom"/>
+						  hasta
 						  <input type="text" size="10" value="10" name="AleatorioTo" class="digits required" id="AleatorioTo"/>
 							<br/><input type="checkbox" name="AleatorioRepe" id="AleatorioRepe"/>
 			Los numeros pueden repetirse
 			<br/><input type="submit" value="EchaloAsuerte" id="aleatorioBut" class="button"/>
-					   </form>			
+					   </form>
 			<div class="resultados">
 				<h4>Resultado</h4>
 				<ul>
@@ -432,11 +441,11 @@ $(document).ready(function(){
 				</ul>
 			</div>
 		</div>
-		
+
 		<div class="menuContent" id="eleccion">
 			<form action="" method="post" id="formEleccion">
-				Elige 
-			  <input type="text" size="5" value="1" name="EleccionNum" class="required digits" id="EleccionNum"/> 
+				Elige
+			  <input type="text" size="5" value="1" name="EleccionNum" class="required digits" id="EleccionNum"/>
 			  uno de los siguientes valores: <br/>
 			  <input type="text" size="20" name="EleccionValues[]" class="EleccionValues"/>
 			  <input type="text" size="20" name="EleccionValues[]" class="EleccionValues"/>
@@ -444,14 +453,14 @@ $(document).ready(function(){
 				<br/><br/><input type="checkbox" id="EleccionRepe" name="EleccionRepe"/>
 				Los valores pueden repetirse
 				<br/><input type="submit" value="EchaloASuerte" id="eleccionBut"/>
-					   </form>	
+					   </form>
 			<div class="resultados">
 				<h4>Resultado</h4>
 				<ul>
 					<!-- Sera rellenado con los resultados -->
 				</ul>
-			</div>					   
-		</div>	
+			</div>
+		</div>
 		<div class="menuContent" id="asociacion">
 
 			<form action="" method="post" id="formAsociacion">
@@ -463,7 +472,7 @@ $(document).ready(function(){
 			  <input type="text" size="20" name="SeleccionValues2[]" class="SeleccionValues2"/>
 			  <input type="text" size="20" name="SeleccionValues2[]" class="SeleccionValues2"/>
 			  <img id="elecAddBut2" src="img/add.png" class="add"/>
-				<br/><input type="checkbox" id="AsociacionRepe" name="AsociacionRepe"/> 
+				<br/><input type="checkbox" id="AsociacionRepe" name="AsociacionRepe"/>
 				Los valores del segundo conjunto pueden repetirse.
 				<br/><input type="submit" value="EchaloASuerte" id="asociacionBut" />
 			</form>
@@ -472,17 +481,17 @@ $(document).ready(function(){
 				<TABLE border="0">
 					<!-- Sera rellenado con los resultados -->
 				</table>
-			</div>		
+			</div>
 		</div>
 
-		<div class="menuContent menuDatosMultiplicidad" id="compartida"> 
+		<div class="menuContent menuDatosMultiplicidad" id="compartida">
 			<form action="" method="post" id="formCompartida">
 				Numero de participantes (tú incluido):
 				<input type="text" size="7" id="numParticipantes" name="numParticipantes" class="required digits"/>
 				<br/>Tu nombre:
-				<input type="text" size="20" id="nombreUsuario" name="nombreUsuario" class="required"/>				
+				<input type="text" size="20" id="nombreUsuario" name="nombreUsuario" class="required"/>
 				<br/>Nombre de la sala(opcional):
-				<input type="text" size="20" id="nombre" name="nombre"/>								
+				<input type="text" size="20" id="nombre" name="nombre"/>
 				<br/>Contraseña de la sala(opcional):
 				<input type="text" size="20" id="contrasenia" name="contrasenia"/>
 				<br/>Direcciones de correos:  (opcional):
@@ -492,7 +501,7 @@ $(document).ready(function(){
 			</form>
 		</div>
 	</div>
-      
+
 	<dl class="faqs">
         <dt>¿Para que sirve esta pagina?</dt>
         <dd>Esta página te permite realizar decisiones de una forma aleatoria. La pagina ofrece diferentes formas que se adaptan a diferentes necesidades.</dd>
@@ -501,21 +510,21 @@ $(document).ready(function(){
         <dt>Numeros Aleatorios</dt>
         <dd>Primera opcion a la izquierda.<br/>Este tipo de tirada devuelve una serie de numeros aleatorio dentro dentro de un rango, ambos numeros inclusives. Si deseas que los numeros se puedan repetir activa la casilla indicada para ello. <br/>Puedes utilizar este tipo para decidir un dia del mes para hacer algo o echar la loteria.</dd>
         <dt>Eleccion de valores</dt>
-        <dd>Segunda a la izquierda.<br/>Obtiene uno o mas valores de un conjunto dado. Debes indicar si deseas que se puedan repetir los valores en la seleccion. Si no se pueden repetir los elementos, el numero de opciones debe ser mayor al el numero de elementos en el conjunto. 
+        <dd>Segunda a la izquierda.<br/>Obtiene uno o mas valores de un conjunto dado. Debes indicar si deseas que se puedan repetir los valores en la seleccion. Si no se pueden repetir los elementos, el numero de opciones debe ser mayor al el numero de elementos en el conjunto.
 			<br/>Utiliza esta opcion para elegir el color de tus zapatos, quien saca la basura o a quien le toca beber.</dd>
         <dt>Asociacion de Valores</dt>
-        <dd>Último a la izquierda.<br/>Este tipo de tirada te permite asociar valores de dos conjuntos. Debes introducir los dos conjuntos a relacionar al igual que si deseas que los valores del segundo conjunto se puedan repetir. Si no se pueden repetir, el primer conjunto debe ser igual o mayor en numero de elementos al primero. 
-		<br/>Utiliza este tipo para repartir las tareas de la casa, los cuartos de un piso, etc...</dd>		
+        <dd>Último a la izquierda.<br/>Este tipo de tirada te permite asociar valores de dos conjuntos. Debes introducir los dos conjuntos a relacionar al igual que si deseas que los valores del segundo conjunto se puedan repetir. Si no se pueden repetir, el primer conjunto debe ser igual o mayor en numero de elementos al primero.
+		<br/>Utiliza este tipo para repartir las tareas de la casa, los cuartos de un piso, etc...</dd>
 		<dt>Individual</dt>
         <dd>Primer boton arriba. Usa esta tirada para ver los resultados en un solo ordenador.</dd>
 		<dt>Distribuida/Multiple</dt>
-        <dd>Secundo boton arriba del panel. Utiliza este tipo para que mas de una persona participe, debes indicar tu nombre, y el numero de participantes. Si lo deseas puede indicar tambien un nombre de la sala que vas a crear, asi como una contraseña y una lista de direciones de correo que recibiran un mail invitandoles a unirse.</dd>		
+        <dd>Secundo boton arriba del panel. Utiliza este tipo para que mas de una persona participe, debes indicar tu nombre, y el numero de participantes. Si lo deseas puede indicar tambien un nombre de la sala que vas a crear, asi como una contraseña y una lista de direciones de correo que recibiran un mail invitandoles a unirse.</dd>
 		<dt>¿Como se unen mis amigos?</dt>
-        <dd>Una vez creada la sala deben dirigirse al apartado sala y buscar la sala que acabes de crear.</dd>				
+        <dd>Una vez creada la sala deben dirigirse al apartado sala y buscar la sala que acabes de crear.</dd>
     </dl>
-      
+
     <?php
-	//uncoment	botonAyuda("En esta pagina debes pulsar uno de los 2 botones.<br />El primero sirve para echar a suerte algo cuando TODOS los participantes se encuentran delante de esta pantalla.<br />El segundo boton se usa para echar a suerte algo que necesite la participacion de almenos 2 personas que no estan en el mismo lugar. Es decir, uno puede estar en Caceres y otro en Madrid.<br />");    
+	//uncoment	botonAyuda("En esta pagina debes pulsar uno de los 2 botones.<br />El primero sirve para echar a suerte algo cuando TODOS los participantes se encuentran delante de esta pantalla.<br />El segundo boton se usa para echar a suerte algo que necesite la participacion de almenos 2 personas que no estan en el mismo lugar. Es decir, uno puede estar en Caceres y otro en Madrid.<br />");
     ?>
 	</div>
 
@@ -532,38 +541,38 @@ $(document).ready(function(){
 			function swapoffMoneda()
 			 {
 				  document.imgMoneda.src="img/cruz.png";
-			 }  
+			 }
 			 </script>
         <p>
         ¿Cara o Cruz?  Pincha en la moneda!
         </p>
 		<a href="#" id="CaraOCruz"><img  name="imgMoneda" src="img/cruz.png" alt="Moneda" onmouseover="swaponMoneda()" onmouseout="swapoffMoneda()" title="Heads or Tails?" /></a>
         </center>
-        </div>     
-        
+        </div>
+
 		  <h3 onclick="$('#rrss').toggle('slow')">
           Redes Sociales</h3>
 		<div id="rrss" class="comnews">
-        <center>        <a href="http://www.tuenti.com/#m=Page&func=index&page_key=1_1769_59547535" target="_blank"><img  name="imgTuenti" src="img/tuenti.png" alt="Tuenti" title="Sigenos en Tuenti" /></a>        
-        
+        <center>        <a href="http://www.tuenti.com/#m=Page&func=index&page_key=1_1769_59547535" target="_blank"><img  name="imgTuenti" src="img/tuenti.png" alt="Tuenti" title="Sigenos en Tuenti" /></a>
+
 		<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FEchaloASuerte%2F202874843092116&amp;width=200&amp;colorscheme=light&amp;show_faces=false&amp;border_color=3A6BAD&amp;stream=false&amp;header=true&amp;height=62" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:62px;" allowTransparency="true"></iframe>  <br />
-        
-<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.echaloasuerte.com" data-text="Usando #EchaloASuerte :D" data-count="horizontal" data-lang="es">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>         
-       
+
+<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.echaloasuerte.com" data-text="Usando #EchaloASuerte :D" data-count="horizontal" data-lang="es">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
 
 <script type="text/javascript" src="http://platform.linkedin.com/in.js"></script><script type="in/share" data-url="http://www.echaloasuerte.com" data-counter="right"></script><br /><br />
 
 
-<a href="http://www.delicious.com/save" onclick="window.open('http://www.delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;"> 
+<a href="http://www.delicious.com/save" onclick="window.open('http://www.delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;">
 <img src="http://www.videojuegosonline.net/images/share/Share-delicius.png" height="50" width="50" alt="Delicious" />
 </a><font color="#FFFFFF" >____</font>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script><!-- Añade esta etiqueta donde quieras colocar el botón +1 -->
-<g:plusone></g:plusone><br /><img src="img/logo.png" alt="" width="1" height="1" />  </div> 
+<g:plusone></g:plusone><br /><img src="img/logo.png" alt="" width="1" height="1" />  </div>
 
        <h3 onclick="$('#donar').toggle('slow')">
           Donaciones</h3>
 		<div id="donar" class="comnews">
-       
+
         <p>
         ¿Por qué no donar un par de euros a tu pagina favorita?.<a href="acerca.php">Click para más información.</a>
         </p>
@@ -574,9 +583,9 @@ $(document).ready(function(){
 <input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal. La forma rápida y segura de pagar en Internet.">
 <img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
 </form>
-		
+
         </center>
-        </div>    
+        </div>
 
 <h3>Publicidad</h3> <div style="display:block ;" class="comnews"><center>
 <script type="text/javascript"><!--
@@ -590,7 +599,7 @@ google_ad_height = 250;
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>  </center>
-      
+
        </div>
 
 	</div><div style="clear:both;">
