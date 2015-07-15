@@ -529,10 +529,6 @@ $(document).ready(function(){
 	</div>
 
 <div id="left" >
-       <div>
-            <p><strong>Tenemos una version nueva, Te gustaria probarla?</strong></p>
-            <a href="http://prod.echaloasuerte.com"><h3>Echaloasuerte 2.0</h3></a>
-       </div>
        <h3 onclick="$('#moneda').toggle('slow')">
           Cara o Cruz</h3>
 		<div id="moneda" class="comnews">
